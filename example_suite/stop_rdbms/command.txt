@@ -1,0 +1,3 @@
+exe    = mysql
+action = stop_rdbms
+check  = regex_file

@@ -1,0 +1,15 @@
+#
+# List here all the tests to perform, in the correct order, one test name
+# per line.
+#
+# Comments starting with # are allowed.
+#
+#start_rdbms # Uncomment this test if mysql is not supposed to be running
+drop_database
+create_database
+create_table_authors
+insert_into_table_authors
+create_table_books
+insert_into_table_books
+drop_database
+#stop_rdbms # Uncomment this test if mysql is not supposed to be running

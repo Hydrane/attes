@@ -1,0 +1,3 @@
+line_should_match: ERROR 1062 \(23000\) at line 8: Duplicate entry 'camus-albert-1913' for key 's_lastname'
+line_should_match: ERROR 1062 \(23000\) at line 12: Duplicate entry '2' for key 'PRIMARY'
+content_should_match: COUNT\(\*\)\n4

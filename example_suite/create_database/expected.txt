@@ -1,0 +1,4 @@
+#
+# A successful test shall not produced any output.
+#
+line_should_not_match: [^\s]*

@@ -1,0 +1,4 @@
+line_should_match: ERROR 1062 \(23000\) at line 8: Duplicate entry 'brave new world-1' for key 's_title'
+line_should_match: ERROR 1062 \(23000\) at line 12: Duplicate entry '2' for key 'PRIMARY'
+line_should_match: ERROR 1452 \(23000\) at line 16: Cannot add or update a child row: a foreign key constraint fails
+content_should_match: COUNT\(\*\)\n3

@@ -1,0 +1,5 @@
+exe      = mysql
+database = attes_example_suite_you_can_delete_me
+action   = source_file
+file     = create_table_books.sql
+check    = regex_file

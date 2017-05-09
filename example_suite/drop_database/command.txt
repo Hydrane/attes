@@ -1,0 +1,4 @@
+exe      = mysql
+database = attes_example_suite_you_can_delete_me
+action   = drop_database
+check    = regex_file
