@@ -372,8 +372,8 @@ sub get_create_database_command
         if ($host)     { $command .= " --host $host"; }
         if ($port)     { $command .= " --port $port"; }
         if ($user)     { $command .= " --user $user"; }
-        if ($password) { $command .= " --password $password"; }
         $command = "echo \"CREATE DATABASE IF NOT EXISTS $database;\" | $command";
+        if ($password) { $command  = "export MYSQL_PWD='$password'; $command"; }
 
     } elsif ($type eq $POSTGRESQL) {
         if ($host)     { $command .= " --host $host"; }
@@ -407,8 +407,9 @@ sub get_drop_database_command
         if ($host)     { $command .= " --host $host"; }
         if ($port)     { $command .= " --port $port"; }
         if ($user)     { $command .= " --user $user"; }
-        if ($password) { $command .= " --password $password"; }
         $command = "echo \"DROP DATABASE IF EXISTS $database;\" | $command";
+        if ($password) { $command  = "export MYSQL_PWD='$password'; $command"; }
+
     } elsif ($type eq $POSTGRESQL) {
         if ($host)     { $command .= " --host $host"; }
         if ($port)     { $command .= " --port $port"; }
@@ -442,7 +443,6 @@ sub get_source_file_command
         if ($host)     { $command .= " --host $host"; }
         if ($port)     { $command .= " --port $port"; }
         if ($user)     { $command .= " --user $user"; }
-        if ($password) { $command .= " --password $password"; }
         if ($database) { $command .= " --database $database"; }
         #
         # Use '--force' to continue processing the file even if an error
@@ -450,6 +450,7 @@ sub get_source_file_command
         # errors.
         #
         $command .= " --force < $path";
+        if ($password) { $command  = "export MYSQL_PWD='$password'; $command"; }
 
     } elsif ($type eq $POSTGRESQL) {
         if ($host)     { $command .= " --host $host"; }
